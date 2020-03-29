@@ -1,0 +1,13 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_fab_close">
+
+    <target
+        android:name="fab_main_rotate"
+        android:animation="@animator/fab_close_to_main_rotate_animator" />
+
+    <target
+        android:name="fab_main_replace"
+        android:animation="@animator/fab_close_to_main_replace_animator" />
+
+</animated-vector>

@@ -1,0 +1,86 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary</item>
+        <item name="colorAccent">@color/color_primary</item>
+
+        <item name="colorControlNormal">@color/color_control</item>
+        <item name="colorControlHighlight">@color/color_highlight</item>
+
+        <item name="android:windowBackground">@color/color_background</item>
+        <item name="android:colorBackground">@color/color_background</item>
+
+        <item name="android:statusBarColor">@color/color_background_transparent</item>
+        <item name="android:navigationBarColor">@color/color_background_transparent</item>
+
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="match_parent_match_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="match_parent_wrap_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="wrap_content_wrap_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+    <style name="collapsing_app_bar" parent="match_parent_wrap_content">
+        <item name="layout_behavior">com.leeewy.fabwithspeeddial.widgets.BlockableAppBarLayoutBehavior</item>
+    </style>
+
+    <style name="recycler_view" parent="match_parent_match_parent">
+        <item name="android:scrollbars">none</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:paddingTop">@dimen/padding_half</item>
+        <item name="android:paddingBottom">@dimen/padding_half</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+        <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
+    </style>
+
+    <style name="button_fab" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="layout_anchorGravity">bottom|end</item>
+        <item name="backgroundTint">@color/color_primary</item>
+        <item name="rippleColor">@color/color_highlight</item>
+        <item name="tint">@android:color/white</item>
+        <item name="fabSize">normal</item>
+    </style>
+
+    <style name="button_fab_ext" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:textSize">@dimen/text</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="layout_anchorGravity">bottom|end</item>
+        <item name="backgroundTint">@color/color_primary</item>
+        <item name="rippleColor">@color/color_highlight</item>
+        <item name="iconTint">@android:color/white</item>
+        <item name="fabSize">normal</item>
+        <item name="layout_behavior">com.leeewy.fabwithspeeddial.widgets.ExtendedFloatingActionButtonBehavior</item>
+    </style>
+
+</resources>
