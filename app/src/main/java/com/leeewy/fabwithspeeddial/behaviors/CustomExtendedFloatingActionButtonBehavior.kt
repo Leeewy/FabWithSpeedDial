@@ -1,4 +1,4 @@
-package com.leeewy.fabwithspeeddial.widgets
+package com.leeewy.fabwithspeeddial.behaviors
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,9 +6,10 @@ import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import com.leeewy.fabwithspeeddial.widgets.ExpandableExtendedFloatingActionButton
 
 @Suppress("unused")
-class ExtendedFloatingActionButtonBehavior<T : ExtendedFloatingActionButton>(
+class CustomExtendedFloatingActionButtonBehavior<T : ExtendedFloatingActionButton>(
     context: Context,
     attrs: AttributeSet
 ) : CoordinatorLayout.Behavior<T>(context, attrs) {
@@ -28,9 +29,9 @@ class ExtendedFloatingActionButtonBehavior<T : ExtendedFloatingActionButton>(
         }
 
         if (dyConsumed > 0 && child.isExtended) {
-            child.shrink()
+            if (child is ExpandableExtendedFloatingActionButton) child.shrinkAfterScroll() else child.shrink()
         } else if (dyConsumed < 0 && !child.isExtended) {
-            child.extend()
+            if (child is ExpandableExtendedFloatingActionButton) child.extendAfterScroll() else child.extend()
         }
     }
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/speed_dial_background"
+    style="@style/match_parent_match_parent"
+    android:translationZ="6dp"
+    app:layout_anchor="@id/fab_main"
+    app:layout_behavior=".behaviors.CustomExpandableTransformationBehavior"
+    android:visibility="invisible"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/fabs_container"
+        style="@style/wrap_content_wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom|end">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_first"
+            style="@style/button_fab"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginEnd="@dimen/margin_big"
+            app:srcCompat="@drawable/ic_fab_1" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_second"
+            style="@style/button_fab"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginEnd="@dimen/margin_big"
+            app:srcCompat="@drawable/ic_fab_2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_third"
+            style="@style/button_fab"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginEnd="@dimen/margin_big"
+            app:srcCompat="@drawable/ic_fab_3" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -2,6 +2,5 @@
 <resources>
 
     <integer name="anim_duration">300</integer>
-    <integer name="anim_duration_double">600</integer>
 
 </resources>

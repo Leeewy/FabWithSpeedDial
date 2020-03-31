@@ -4,9 +4,8 @@
     <dimen name="margin_big">24dp</dimen>
     <dimen name="margin">16dp</dimen>
     <dimen name="margin_half">8dp</dimen>
+    <dimen name="margin_quarter">4dp</dimen>
 
-    <dimen name="padding_big">24dp</dimen>
-    <dimen name="padding">16dp</dimen>
     <dimen name="padding_half">8dp</dimen>
 
     <dimen name="text_huge">24sp</dimen>
@@ -17,5 +16,7 @@
 
     <dimen name="radius">32dp</dimen>
     <dimen name="elevation">4dp</dimen>
+
+    <dimen name="default_main_fab_size">56dp</dimen>
 
 </resources>

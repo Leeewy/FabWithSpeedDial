@@ -2,9 +2,11 @@
 
     <string name="app_name">FAB with SpeedDial</string>
 
-    <string name="title_default">Default</string>
-    <string name="title_extended">Extended</string>
-    <string name="title_custom">Custom</string>
+    <string name="title_default_fab">Default FAB</string>
+    <string name="title_custom_fab">Custom FAB</string>
+    <string name="title_default_efab">Default EFAB</string>
+    <string name="title_custom_efab">Custom EFAB</string>
+    <string name="title_bonus">Bonus</string>
 
     <string name="speed_dial">Speed dial</string>
 

@@ -10,17 +10,6 @@ import com.leeewy.fabwithspeeddial.R
 
 class MockItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val colors = listOf(
-        R.color.mock_color_1,
-        R.color.mock_color_2,
-        R.color.mock_color_3,
-        R.color.mock_color_4,
-        R.color.mock_color_5,
-        R.color.mock_color_6,
-        R.color.mock_color_7,
-        R.color.mock_color_8
-    )
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == ITEM_VIEW) {
             ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_mock, parent, false))
@@ -32,10 +21,7 @@ class MockItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is ViewHolder) {
             holder.mockItem.setCardBackgroundColor(
-                ContextCompat.getColor(
-                    holder.mockItem.context,
-                    colors.random()
-                )
+                ContextCompat.getColor(holder.mockItem.context, R.color.color_item)
             )
         }
     }

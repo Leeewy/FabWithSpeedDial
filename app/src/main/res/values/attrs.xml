@@ -5,4 +5,25 @@
         <attr name="appBarText" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="ExpandableFloatingActionButton">
+        <attr name="animationDuration" format="integer" />
+        <attr name="expandingDrawable" format="reference" />
+        <attr name="collapsingDrawable" format="reference" />
+        <attr name="expandedIconColor" format="color" />
+        <attr name="collapsedIconColor" format="color" />
+        <attr name="expandedBackgroundColor" format="color" />
+        <attr name="collapsedBackgroundColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableExtendedFloatingActionButton">
+        <attr name="autoAnimation" format="boolean" />
+        <attr name="animationDuration" />
+        <attr name="expandingDrawable" />
+        <attr name="collapsingDrawable" />
+        <attr name="expandedIconColor" />
+        <attr name="collapsedIconColor" />
+        <attr name="expandedBackgroundColor" />
+        <attr name="collapsedBackgroundColor" />
+    </declare-styleable>
+
 </resources>

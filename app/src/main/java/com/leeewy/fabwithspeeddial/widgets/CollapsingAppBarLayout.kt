@@ -1,12 +1,14 @@
 package com.leeewy.fabwithspeeddial.widgets
 
 import android.content.Context
+import android.content.res.Configuration
 import android.util.AttributeSet
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 
 import com.google.android.material.appbar.AppBarLayout
 import com.leeewy.fabwithspeeddial.R
+import com.leeewy.fabwithspeeddial.behaviors.BlockableAppBarLayoutBehavior
 import kotlinx.android.synthetic.main.layout_toolbar_collapsing.view.*
 import kotlin.math.abs
 
@@ -38,13 +40,15 @@ class CollapsingAppBarLayout : AppBarLayout {
         addOnOffsetChangedListener(onOffsetChangedListener)
     }
 
-    fun enableScrolling(enable: Boolean, changeExpandedState: Boolean) {
+    fun enableScrolling(enable: Boolean = true, changeExpandedState: Boolean = true) {
+        val enabled = enable && resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+
         if (changeExpandedState) {
-            setExpanded(enable, false)
+            setExpanded(enabled, false)
         }
 
-        isActivated = enable
-        ((layoutParams as CoordinatorLayout.LayoutParams).behavior as BlockableAppBarLayoutBehavior).scrollable = enable
+        isActivated = enabled
+        ((layoutParams as CoordinatorLayout.LayoutParams).behavior as BlockableAppBarLayoutBehavior).scrollable = enabled
     }
 
     private val onOffsetChangedListener = OnOffsetChangedListener { appBarLayout, verticalOffset ->

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/match_parent_match_parent"
-    tools:context=".fragments.ExtendedFragment">
+    tools:context=".fragments.BonusFragment">
 
     <com.leeewy.fabwithspeeddial.widgets.CollapsingAppBarLayout
         android:id="@+id/collapsing_app_bar_layout"
         style="@style/collapsing_app_bar"
-        app:appBarText="@string/title_extended" />
+        app:appBarText="@string/title_bonus" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

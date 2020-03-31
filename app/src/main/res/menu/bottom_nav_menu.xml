@@ -2,18 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_default"
-        android:icon="@drawable/ic_default"
-        android:title="@string/title_default" />
+        android:id="@+id/navigation_default_fab"
+        android:icon="@drawable/ic_default_fab"
+        android:title="@string/title_default_fab" />
 
     <item
-        android:id="@+id/navigation_extended"
-        android:icon="@drawable/ic_extended"
-        android:title="@string/title_extended" />
+        android:id="@+id/navigation_custom_fab"
+        android:icon="@drawable/ic_custom_fab"
+        android:title="@string/title_custom_fab" />
 
     <item
-        android:id="@+id/navigation_custom"
-        android:icon="@drawable/ic_custom"
-        android:title="@string/title_custom" />
+        android:id="@+id/navigation_default_efab"
+        android:icon="@drawable/ic_default_efab"
+        android:title="@string/title_default_efab" />
+
+    <item
+        android:id="@+id/navigation_custom_efab"
+        android:icon="@drawable/ic_custom_efab"
+        android:title="@string/title_custom_efab" />
+
+    <item
+        android:id="@+id/navigation_bonus"
+        android:icon="@drawable/ic_bonus"
+        android:title="@string/title_bonus" />
 
 </menu>

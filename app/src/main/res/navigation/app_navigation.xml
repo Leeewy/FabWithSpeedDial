@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@+id/navigation_default_fab">
+
+    <fragment
+        android:id="@+id/navigation_default_fab"
+        android:name="com.leeewy.fabwithspeeddial.fragments.DefaultFabFragment"
+        android:label="@string/title_default_fab"
+        tools:layout="@layout/fragment_default_fab" />
+
+    <fragment
+        android:id="@+id/navigation_custom_fab"
+        android:name="com.leeewy.fabwithspeeddial.fragments.CustomFabFragment"
+        android:label="@string/title_custom_fab"
+        tools:layout="@layout/fragment_custom_fab" />
+
+    <fragment
+        android:id="@+id/navigation_default_efab"
+        android:name="com.leeewy.fabwithspeeddial.fragments.DefaultEfabFragment"
+        android:label="@string/title_default_efab"
+        tools:layout="@layout/fragment_default_efab" />
+
+    <fragment
+        android:id="@+id/navigation_custom_efab"
+        android:name="com.leeewy.fabwithspeeddial.fragments.CustomEfabFragment"
+        android:label="@string/title_custom_efab"
+        tools:layout="@layout/fragment_custom_efab" />
+
+    <fragment
+        android:id="@+id/navigation_bonus"
+        android:name="com.leeewy.fabwithspeeddial.fragments.BonusFragment"
+        android:label="@string/title_bonus"
+        tools:layout="@layout/fragment_bonus" />
+
+</navigation>

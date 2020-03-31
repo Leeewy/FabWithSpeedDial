@@ -4,16 +4,11 @@
     <color name="color_primary">#3DDC84</color>
     <color name="color_control">#349B9B9B</color>
     <color name="color_highlight">#803DDC84</color>
+
     <color name="color_background">#FFFFFF</color>
     <color name="color_background_transparent">#AA1A1A1A</color>
+    <color name="color_background_speed_dial">#EEFFFFFF</color>
 
-    <color name="mock_color_1">#80f16364</color>
-    <color name="mock_color_2">#80f58559</color>
-    <color name="mock_color_3">#80f9a43e</color>
-    <color name="mock_color_4">#80e4c62e</color>
-    <color name="mock_color_5">#8067bf74</color>
-    <color name="mock_color_6">#8059a2be</color>
-    <color name="mock_color_7">#802093cd</color>
-    <color name="mock_color_8">#80ad62a7</color>
+    <color name="color_item">#E1E1E1</color>
 
 </resources>
