@@ -17,9 +17,10 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.transformation.ExpandableTransformationBehavior
 import com.leeewy.fabwithspeeddial.R
+import com.leeewy.fabwithspeeddial.widgets.NotFlingingNestedScrollView
 
 @Suppress("unused")
-class CustomExpandableTransformationBehavior(
+class BonusExpandableTransformationBehavior(
     private val context: Context,
     attrs: AttributeSet? = null
 ) : ExpandableTransformationBehavior(context, attrs) {
@@ -40,10 +41,26 @@ class CustomExpandableTransformationBehavior(
                 createFabsAnimation(root, expanded, isAnimating)?.let {
                     add(it)
                 }
+
+                createBottomShadowBackgroundColorAnimator(root, expanded)?.let {
+                    add(it)
+                }
             })
             addListener(
-                onStart = { if (expanded) root.isVisible = true },
-                onEnd = { if (!expanded) root.isInvisible = true }
+                onStart = {
+                    if (expanded) {
+                        root.isVisible = true
+
+                        scrollToTop(root)
+                    }
+                },
+                onEnd = {
+                    if (!expanded) {
+                        root.isInvisible = true
+
+                        scrollToTop(root)
+                    }
+                }
             )
         }
     }
@@ -51,10 +68,14 @@ class CustomExpandableTransformationBehavior(
     private fun createFabsAnimation(root: View, expanded: Boolean, isAnimating: Boolean): AnimatorSet? {
         root.findViewById<ViewGroup>(R.id.fabs_container)?.let { child ->
             if (expanded && !isAnimating) {
-                child.children.forEach {
-                    it.alpha = 0f
-                    it.scaleX = 0.4f
-                    it.scaleY = 0.4f
+                child.children.forEach { layout ->
+                    if (layout is ViewGroup) {
+                        layout.children.forEach {
+                            it.alpha = 0f
+                            it.scaleX = 0.4f
+                            it.scaleY = 0.4f
+                        }
+                    }
                 }
             }
 
@@ -67,7 +88,13 @@ class CustomExpandableTransformationBehavior(
             return AnimatorSet().apply {
                 playTogether(mutableListOf<Animator>().apply {
                     (0 until child.childCount).forEach { i ->
-                        add(createSubViewAnimator(child[i], delays[i], child.childCount, expanded))
+                        if (child[i] is ViewGroup) {
+                            (child[i] as ViewGroup).children.forEach {
+                                add(createSubViewAnimator(it, delays[i], child.childCount, expanded))
+                            }
+                        } else {
+                            add(createSubViewAnimator(child[i], delays[i], child.childCount, expanded))
+                        }
                     }
                 })
             }.apply {
@@ -91,6 +118,14 @@ class CustomExpandableTransformationBehavior(
         }
     }
 
+    private fun scrollToTop(child: View) {
+        child.findViewById<NotFlingingNestedScrollView>(R.id.fabs_scroll_view)?.let {
+            it.post {
+                it.fullScroll(View.FOCUS_UP)
+            }
+        }
+    }
+
     private fun createBackgroundColorAnimator(speedDialBackgroundView: View, expanded: Boolean): Animator {
         return ValueAnimator.ofObject(
             ArgbEvaluator(),
@@ -100,6 +135,18 @@ class CustomExpandableTransformationBehavior(
             duration = getDefaultAnimationDuration()
             addUpdateListener { animator -> speedDialBackgroundView.setBackgroundColor(animator.animatedValue as Int) }
         }
+    }
+
+    private fun createBottomShadowBackgroundColorAnimator(root: View, expanded: Boolean): Animator? {
+        root.findViewById<View>(R.id.bottom_shadow)?.let { bottomShadowView ->
+            return ObjectAnimator.ofFloat(
+                bottomShadowView,
+                "alpha",
+                if (expanded) 1f else 0f
+            ).apply {
+                duration = getDefaultAnimationDuration()
+            }
+        } ?: return null
     }
 
     private fun getDefaultAnimationDuration(): Long = context.resources.getInteger(R.integer.anim_duration).toLong()

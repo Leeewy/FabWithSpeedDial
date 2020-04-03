@@ -15,7 +15,8 @@
         android:id="@+id/fabs_container"
         style="@style/wrap_content_wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="bottom|end">
+        android:layout_gravity="bottom|end"
+        tools:layout_marginBottom="80dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_first"

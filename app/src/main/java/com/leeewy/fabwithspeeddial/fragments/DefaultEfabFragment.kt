@@ -3,6 +3,7 @@ package com.leeewy.fabwithspeeddial.fragments
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.marginBottom
 import com.leeewy.fabwithspeeddial.R
 import com.leeewy.fabwithspeeddial.adapters.MockItemsAdapter
 import com.leeewy.fabwithspeeddial.fragments.base.BaseFragment
@@ -20,6 +21,12 @@ class DefaultEfabFragment : BaseFragment(R.layout.fragment_default_efab) {
     }
 
     override fun buildSpeedDial() {
+        setSpeedDialMargins(
+            fabs_container,
+            resources.getDimensionPixelSize(R.dimen.margin_quarter),
+            fabs_container.marginBottom
+        )
+
         fab_main.setOnClickListener {
             fab_main.isExpanded = !fab_main.isExpanded
         }

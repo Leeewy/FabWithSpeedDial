@@ -9,6 +9,6 @@
     <color name="color_background_transparent">#AA1A1A1A</color>
     <color name="color_background_speed_dial">#EEFFFFFF</color>
 
-    <color name="color_item">#E1E1E1</color>
+    <color name="color_mock_item">#E1E1E1</color>
 
 </resources>

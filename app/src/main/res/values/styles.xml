@@ -32,23 +32,12 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="toolbar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?android:attr/actionBarSize</item>
-        <item name="contentInsetStart">0dp</item>
-        <item name="contentInsetEnd">0dp</item>
-    </style>
-
     <style name="collapsing_app_bar" parent="match_parent_wrap_content">
         <item name="layout_behavior">com.leeewy.fabwithspeeddial.behaviors.BlockableAppBarLayoutBehavior</item>
     </style>
 
     <style name="recycler_view" parent="match_parent_match_parent">
-        <item name="android:scrollbars">none</item>
         <item name="android:overScrollMode">never</item>
-        <item name="android:paddingTop">@dimen/padding_half</item>
-        <item name="android:paddingBottom">@dimen/padding_half</item>
-        <item name="android:clipToPadding">false</item>
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
         <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
     </style>
@@ -81,6 +70,18 @@
         <item name="iconTint">@android:color/white</item>
         <item name="fabSize">normal</item>
         <item name="layout_behavior">com.leeewy.fabwithspeeddial.behaviors.CustomExtendedFloatingActionButtonBehavior</item>
+    </style>
+
+    <style name="button_fab_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">@dimen/margin_big</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:padding">8dp</item>
     </style>
 
 </resources>

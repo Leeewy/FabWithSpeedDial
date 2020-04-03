@@ -2,7 +2,10 @@ package com.leeewy.fabwithspeeddial.fragments.base
 
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.marginStart
+import androidx.core.view.marginTop
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
@@ -26,4 +29,14 @@ abstract class BaseFragment(layoutId: Int) : Fragment(layoutId) {
     }
 
     abstract fun buildSpeedDial()
+
+    fun setSpeedDialMargins(container: View, marginEnd: Int, marginBottom: Int) {
+        (container.layoutParams as ViewGroup.MarginLayoutParams).setMargins(
+            container.marginStart,
+            container.marginTop,
+            marginEnd,
+            marginBottom
+        )
+        container.requestLayout()
+    }
 }

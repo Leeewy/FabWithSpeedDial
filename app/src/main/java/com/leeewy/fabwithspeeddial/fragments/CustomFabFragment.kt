@@ -1,14 +1,9 @@
 package com.leeewy.fabwithspeeddial.fragments
 
-import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.core.view.marginEnd
-import androidx.core.view.marginStart
-import androidx.core.view.marginTop
 import com.leeewy.fabwithspeeddial.R
 import com.leeewy.fabwithspeeddial.adapters.MockItemsAdapter
 import com.leeewy.fabwithspeeddial.fragments.base.BaseFragment
@@ -26,15 +21,11 @@ class CustomFabFragment : BaseFragment(R.layout.fragment_custom_fab) {
     }
 
     override fun buildSpeedDial() {
-        (fabs_container.layoutParams as ViewGroup.MarginLayoutParams).apply {
-            setMargins(
-                fabs_container.marginStart,
-                fabs_container.marginTop,
-                fabs_container.marginEnd,
-                resources.getDimensionPixelSize(R.dimen.default_main_fab_size) + (2 * resources.getDimensionPixelSize(R.dimen.margin))
-            )
-        }
-        fabs_container.requestLayout()
+        setSpeedDialMargins(
+            fabs_container,
+            fabs_container.marginEnd,
+            resources.getDimensionPixelSize(R.dimen.default_main_fab_size) + (2 * resources.getDimensionPixelSize(R.dimen.margin))
+        )
 
         View.OnClickListener {
             animateSpeedDialLayout()
@@ -66,12 +57,5 @@ class CustomFabFragment : BaseFragment(R.layout.fragment_custom_fab) {
         fab_main.isExpanded = !fab_main.isExpanded
 
         collapsing_app_bar_layout.enableScrolling(enable = !fab_main.isExpanded, changeExpandedState = false)
-
-        (ContextCompat.getDrawable(
-            requireContext(),
-            if (fab_main.isExpanded) R.drawable.ic_fab_main_to_close_animated else R.drawable.ic_fab_close_to_main_animated
-        ).also {
-            fab_main.setImageDrawable(it)
-        } as AnimatedVectorDrawable).start()
     }
 }

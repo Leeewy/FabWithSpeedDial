@@ -67,17 +67,17 @@ class ExpandableFloatingActionButton : FloatingActionButton {
 
     override fun setExpanded(expanded: Boolean): Boolean {
         return super.setExpanded(expanded).also {
-            animateExpandingEndCollapsing()
+            animateExpandingAndCollapsing()
         }
     }
 
     override fun onRestoreInstanceState(state: Parcelable?) {
         super.onRestoreInstanceState(state)
 
-        animateExpandingEndCollapsing()
+        animateExpandingAndCollapsing()
     }
 
-    private fun animateExpandingEndCollapsing() {
+    private fun animateExpandingAndCollapsing() {
         animateIconDrawable()
 
         mutableListOf<Animator>().apply {

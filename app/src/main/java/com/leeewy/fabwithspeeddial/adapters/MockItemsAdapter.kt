@@ -3,9 +3,7 @@ package com.leeewy.fabwithspeeddial.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.card.MaterialCardView
 import com.leeewy.fabwithspeeddial.R
 
 class MockItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -19,11 +17,7 @@ class MockItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is ViewHolder) {
-            holder.mockItem.setCardBackgroundColor(
-                ContextCompat.getColor(holder.mockItem.context, R.color.color_item)
-            )
-        }
+        // not needed
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -37,9 +31,7 @@ class MockItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class FooterViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val mockItem: MaterialCardView = view.findViewById(R.id.card_view)
-    }
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     companion object {
         private const val LIST_SIZE = 20

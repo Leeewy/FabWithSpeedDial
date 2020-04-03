@@ -81,7 +81,7 @@ class ExpandableExtendedFloatingActionButton : ExtendedFloatingActionButton, Exp
 
     override fun setExpanded(expanded: Boolean): Boolean {
         return expandableWidgetHelper.setExpanded(expanded).also {
-            animateExpandingEndCollapsing()
+            animateExpandingAndCollapsing()
         }
     }
 
@@ -121,7 +121,7 @@ class ExpandableExtendedFloatingActionButton : ExtendedFloatingActionButton, Exp
                 isExtended = it.getBoolean(IS_EXTENDED_KEY)
             }
 
-            animateExpandingEndCollapsing()
+            animateExpandingAndCollapsing()
         }
     }
 
@@ -137,7 +137,7 @@ class ExpandableExtendedFloatingActionButton : ExtendedFloatingActionButton, Exp
         wasExtended = true
     }
 
-    private fun animateExpandingEndCollapsing() {
+    private fun animateExpandingAndCollapsing() {
         if (!autoAnimation) {
             if (wasExtended) {
                 extend()

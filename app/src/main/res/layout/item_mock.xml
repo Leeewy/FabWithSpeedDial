@@ -4,10 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/mock_item_height"
+    android:layout_height="64dp"
     android:layout_marginTop="@dimen/margin_half"
     android:layout_marginBottom="@dimen/margin_half"
     android:layout_marginStart="@dimen/margin_big"
     android:layout_marginEnd="@dimen/margin_big"
-    app:cardCornerRadius="@dimen/radius"
-    app:cardElevation="@dimen/elevation" />
+    app:cardCornerRadius="32dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/color_mock_item" />
