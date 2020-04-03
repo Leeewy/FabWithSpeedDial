@@ -17,4 +17,22 @@
         tools:listitem="@layout/item_mock"
         tools:itemCount="20" />
 
+    <include layout="@layout/layout_bonus_speed_dial" />
+
+    <com.leeewy.fabwithspeeddial.widgets.ExpandableExtendedFloatingActionButton
+        android:id="@+id/fab_main"
+        style="@style/button_fab_ext"
+        android:layout_margin="@dimen/margin_big"
+        android:text="@string/speed_dial"
+        app:icon="@drawable/ic_fab_main"
+        app:layout_anchor="@id/recycler_view"
+        app:autoAnimation="true"
+        app:animationDuration="@integer/anim_duration"
+        app:expandingDrawable="@drawable/ic_fab_main_to_close_animated"
+        app:collapsingDrawable="@drawable/ic_fab_close_to_main_animated"
+        app:expandedIconColor="@android:color/white"
+        app:collapsedIconColor="@color/color_primary"
+        app:expandedBackgroundColor="@color/color_primary"
+        app:collapsedBackgroundColor="@android:color/white" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
